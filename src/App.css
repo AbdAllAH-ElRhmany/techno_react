@@ -1,38 +1,218 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  line-height: 1.5;
+}
+:root{
+  --main-col :#0c5adb;
+  --col-black : #232323;
+  --col-black-1 : #616161;
+  --col-sub: #00247e;
+  --col-whi : #fff;
+  --col-whi-d : #eff2f7;
+}
+body{
+  font-family: 'Mulish', sans-serif;
+  color: var(--col-black);
+}
+h1, h2, h3, h4, h5, h6{
+  font-weight: bolder !important;
+}
+.mycontainer{
+  width: 85% !important;
+  margin: auto;
+}
+.clear{
+  clear: both;
+}
+a:hover{
+  text-decoration: none;
+}
+a{
+  text-decoration: none;
+}
+ul{
+  list-style: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* blue hover */
+.blue-hover{
+  transition: color .5s ease-in-out;
+  -webkit-transition: color .5s ease-in-out;
+  -moz-transition: color .5s ease-in-out;
+  -ms-transition: color .5s ease-in-out;
+  -o-transition: color .5s ease-in-out;
+}
+.blue-hover:hover,.header-content .nav-list > li > a.active{
+  color: var(--main-col) !important;
+}
+/* section padding */
+
+.pad-120{
+  padding: 120px 0;
+}
+.pad-60{
+  padding: 60px 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* hero image */
+.pos-rel{
+  position: relative;
+}
+.hero-img{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+/* btn */
+.btn{
+  background-color: var(--main-col);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 5px;
+  outline: 0;
+  text-transform: capitalize;
+  transition: background .5s ease-in-out;
+  -webkit-transition: background .5s ease-in-out;
+  -moz-transition: background .5s ease-in-out;
+  -ms-transition: background .5s ease-in-out;
+  -o-transition: background .5s ease-in-out;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.btn:hover{
+  background-color: var(--col-sub);
+  color: #fff;
+}
+/* description style */
+.desc{
+  font-size: 18px;
+  color: var(--col-black-1);
+}
+/* section header */
+.section-header-subtitle{
+  color: var(--main-col);
+  font-size: 16px;
+  letter-spacing: 5px;
+}
+.section-header-title{
+  font-size: 40px;
+}
+.section-header-line{
+  width: 90px;
+  height: 5px;
+  background-color: #aec6ef;
+  position: relative;
+}
+.section-header-line::before{
+  content: '';
+  position: absolute;
+  width: 10px;
+  top: -3px;
+  left: 0;
+  height: 10px;
+  background: var(--main-col);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  animation-name: move-ball;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+.section-header-desc{
+  width: 100%;
+}
+
+/* section header Media Query */
+@media(max-width:768px){
+  .section-header-title{
+    font-size: 28px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* animations */
+
+@keyframes move-ball{
+  0%{
+    left: 0;
+  }
+  100%{
+    left: 90%;
+  }
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
+@keyframes rotate-points{
+  0%{
     transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
   }
-  to {
+  100%{
     transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
   }
 }
+
+@keyframes moveUp{
+  100%, 0%{
+    margin-bottom: 30px;
+  }
+  50%{
+    margin-bottom: 0px;
+  }
+}
+.toTop{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+}
+.toTop i{
+  line-height: 60px;
+  font-size: 36px;
+}
+
+
+/* preloader style */
+
+.preloader{
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--col-whi);
+  z-index: 999999;
+}
+.preloader-content img{
+  width: 150px;
+  margin-bottom: 20px;
+  animation: rotate-points 2s linear  infinite;
+  -webkit-animation: rotate-points 2s linear  infinite;
+}
+.preloader-content p, .preloader-content p::after{
+  font-weight: bold;
+  font-size: 24px;
+  color: var(--main-col);
+}
+.preloader-content p::after{
+  content: "%";
+}
+

@@ -1,0 +1,50 @@
+
+.request{
+    background: var(--main-col) url(./img/banner.png) top right/cover no-repeat;
+    color: var(--col-whi);
+    padding: 80px 0;
+  }
+  .request-num{
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
+  .request-title{
+    font-size: 50px;
+    width: 50%;
+    margin: auto;
+  }
+  .request .btn{
+    text-transform: uppercase;
+    background-color: #fff;
+    font-weight: bolder;
+    color: var(--main-col);
+    padding: 20px 45px;
+    transition: background .3s, color .3s;
+    -webkit-transition: background .3s, color .3s;
+    -moz-transition: background .3s, color .3s;
+    -ms-transition: background .3s, color .3s;
+    -o-transition: background .3s, color .3s;
+  }
+  .request .btn:hover{
+    background-color: var(--col-sub);
+    color: var(--col-whi) !important;
+  }
+  
+  /* request section Media Query */
+  
+  @media(max-width:992px){
+    .request-title{
+      font-size: 45px;
+      width: 65%;
+    }
+  }
+  @media(max-width:768px){
+    .request-title{
+      font-size: 30px;
+      width: 90%;
+    }
+    .request .btn{
+      padding: 15px 35px;
+    }
+  }
