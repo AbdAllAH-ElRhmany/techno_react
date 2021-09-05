@@ -2,7 +2,7 @@
   "name": "techno",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://abdallah-elrhmany.github.io",
+  "homepage": "https://abdallah-elrhmany.github.io/techno_react",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
     "@testing-library/jest-dom": "^5.14.1",
